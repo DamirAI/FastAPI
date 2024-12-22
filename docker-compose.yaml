@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  rabbit:
+    image: "rabbitmq:3-management"
+    container_name: "rabbit"
+    hostname: "rabbit"
+    ports:
+      - "5672:5672"   # порт для брокера сообщений
+      - "15672:15672" # порт для веб-интерфейса управления
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
